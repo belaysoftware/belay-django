@@ -8,7 +8,7 @@ on:
 # base image name, difficult to compute due to docker lowercase requirement
 env:
   IMAGE_NAME: ghcr.io/belaysoftware/belay-django
-  TAG: "python-10"
+  TAG: "python-3.10"
 
 jobs:
   build:

@@ -7,7 +7,7 @@ that requires a functioning build system, and things that need to be bootstraped
 into a typical Django Dockerfile:
 
 - uwsgi
-- pywatchman
+- watchman
 - poetry
 
 And utilities:
@@ -20,10 +20,10 @@ And utilities:
 # Usage
 
 ```
-FROM ghcr.io/belaysoftware/belay-django:python-10
+FROM ghcr.io/belaysoftware/belay-django:python-3.10
 ```
 
-Currently the only support Python version is 10 (via `python:10-slim`).
+Currently the only supports Python version is 3.10 (via `python:3.10-slim`).
 
 Sets the timezone to US Central.
 

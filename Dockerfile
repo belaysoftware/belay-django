@@ -3,10 +3,16 @@ FROM python:3.10-slim
 ENV TZ=America/Chicago
 ENV POETRY_VIRTUALENVS_CREATE=False
 
-RUN apt update && \
-    apt install -y --no-install-recommends build-essential git ssh wget unzip && \
+ADD vendor/watchman/bin /usr/local/bin
+ADD vendor/watchman/lib /usr/local/lib
+RUN mkdir -p /usr/local/var/run/watchman && \
+    chmod 755 /usr/local/bin/watchman && \
+    chmod 2777 /usr/local/var/run/watchman
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential git ssh && \
     pip install -U --no-cache-dir pip poetry uwsgi pywatchman && \
     rm -Rf /root/.cache && \
-    apt remove -y build-essential && \
-    apt autoremove -y && \
+    apt-get remove -y build-essential && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
