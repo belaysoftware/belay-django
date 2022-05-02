@@ -2,6 +2,7 @@ FROM python:3.10-slim
 
 ENV TZ=America/Chicago
 ENV POETRY_VIRTUALENVS_CREATE=False
+ENV PYTHONUNBUFFERED=1
 
 ADD vendor/watchman/bin /usr/local/bin
 ADD vendor/watchman/lib /usr/local/lib

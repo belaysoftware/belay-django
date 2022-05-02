@@ -27,4 +27,7 @@ Currently the only supports Python version is 3.10 (via `python:3.10-slim`).
 
 Sets the timezone to US Central.
 
+Sets PYTHONUNBUFFERED to force unbuffered/immediate mode on stdout/stderr;
+prevents logs from being dropped.
+
 Configures `poetry` to install dependencies globally.
