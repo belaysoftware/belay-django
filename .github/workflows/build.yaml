@@ -28,7 +28,6 @@ jobs:
           docker build \
             --tag ${{env.IMAGE_NAME}}:${{github.sha}} \
             --tag ${{env.IMAGE_NAME}}:${{env.TAG}} \
-            --cache-from ${{env.IMAGE_NAME}}:main \
             --file Dockerfile \
             .
       - name: Push Docker image
