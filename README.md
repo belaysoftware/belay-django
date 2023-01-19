@@ -6,7 +6,7 @@ It does include tools and utilies that needs to be installed via `apt`, anything
 that requires a functioning build system, and things that need to be bootstraped
 into a typical Django Dockerfile:
 
-- uwsgi
+- uwsgi + mimesupport
 - watchman
 - poetry
 
