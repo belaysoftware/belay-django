@@ -9,6 +9,7 @@ into a typical Django Dockerfile:
 - uwsgi + mimesupport
 - watchman
 - poetry
+- psycopg2
 
 And utilities:
 
