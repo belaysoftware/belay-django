@@ -5,7 +5,7 @@ ENV POETRY_VIRTUALENVS_CREATE=False
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential libpq-dev curl libpcre3 libpcre3-dev git mime-support ssh watchman && \
+    apt-get install -y --no-install-recommends build-essential libpq libpq-dev curl libpcre3 libpcre3-dev git mime-support ssh watchman && \
     pip install -U --no-cache-dir pip poetry uwsgi pywatchman psycopg2 && \
     rm -Rf /root/.cache && \
     apt-get remove -y build-essential libpcre3-dev libpq-dev && \
