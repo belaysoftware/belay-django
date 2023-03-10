@@ -38,7 +38,5 @@ jobs:
             --tag ${{env.IMAGE_NAME}}:${{github.sha}} \
             --tag ${{env.IMAGE_NAME}}:python-${{matrix.version}} \
             --file Dockerfile-${{matrix.version}} \
+            --push \
             .
-      - name: Push Docker image
-        if: github.event_name == 'push'
-        run: docker push -a ${{env.IMAGE_NAME}}
