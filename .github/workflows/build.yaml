@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["3.10", "3.11"]
+        python: ["3.10", "3.11", "3.12"]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
           docker buildx build \
             --platform=linux/arm64,linux/amd64 \
             --tag ${{env.IMAGE_NAME}}:${{github.sha}} \
-            --tag ${{env.IMAGE_NAME}}:python-${{matrix.version}} \
-            --file Dockerfile-${{matrix.version}} \
+            --tag ${{env.IMAGE_NAME}}:python-${{matrix.python}} \
+            --file Dockerfile-${{matrix.python}} \
             --push \
             .
