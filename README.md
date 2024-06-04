@@ -7,7 +7,7 @@ that requires a functioning build system, and things that need to be bootstrappe
 into a typical Django Dockerfile:
 
 - uwsgi + mimesupport
-- watchman
+- watchman (in `python-3.10` and `python-3.11`)
 - poetry
 - psycopg2
 

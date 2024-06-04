@@ -4,6 +4,8 @@ name: Build
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "README.md"
   schedule:
     # every Saturday, at 1:15 UTC
     -cron: "15 1 * * 6"
