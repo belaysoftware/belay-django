@@ -4,6 +4,9 @@ name: Build
 on:
   push:
     branches: [main]
+  schedule:
+    # every Saturday, at 1:15 UTC
+    -cron: "15 1 * * 6"
 
 # base image name, difficult to compute due to docker lowercase requirement
 env:
