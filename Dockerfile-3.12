@@ -6,7 +6,8 @@ ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential libpq5 libpq-dev curl libpcre3 libpcre3-dev git mime-support ssh && \
-    pip install -U --no-cache-dir pip poetry uwsgi psycopg2 && \
+    pip install -U --no-cache-dir pip pipx uwsgi psycopg2 && \
+    pipx install --global poetry && \
     rm -Rf /root/.cache && \
     apt-get remove -y build-essential libpcre3-dev libpq-dev && \
     apt-get autoremove -y && \
